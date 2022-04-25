@@ -1,0 +1,342 @@
+:root{
+    --body-color:#ddd;
+    --navigation-color:#003147;
+    --topbar-color:#fff;
+    --toggle-color:black;
+    --blue-color:#03a9f4;
+    --white-color:white;
+}
+
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+
+    overflow-x: hidden;
+    background-color: var(--body-color);
+
+}
+body.active{
+    --body-color:rgba(0, 0, 0, 0.822);
+    --navigation-color:rgba(208, 35, 205, 0.244);
+    --topbar-color:rgb(185, 28, 133);
+    --toggle-color:white;
+    --blue-color:#03a9f4;
+    --white-color:rgb(115, 46, 111);
+}
+.container{
+    width:100%;
+    position:relative;
+}
+ .navigation{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background-color: var(--navigation-color);
+     transition: 0.5s;
+    overflow: hidden;
+}
+.navigation.active{
+    width: 60px;
+}
+.navigation ul{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+}
+.navigation ul li{
+    position: relative;
+    width:100%;
+    list-style: none;
+    color:white;
+    padding:20px;
+    transition: all 0.4s ease;
+}
+.navigation ul li:hover{
+    background-color: #03a9f4;
+    cursor: pointer;
+}
+
+.navigation ul li:nth-child(1):hover{
+    background-color: transparent;
+}
+.navigation ul li:nth-child(1) .icons{
+    font-size: 25px;
+}
+.font{
+    font-size: 25px;
+}
+.navigation ul li:first-child{
+    padding-top:10px;
+    cursor:auto
+}
+.navigation ul li .icons{
+    min-width:60px;
+    height: 40px;
+    font-size: 25px;
+}
+.navigation ul li .title{
+    padding-left:40px;
+    font-size:20px
+}
+
+/*finish navigation*/
+
+/*start main topbar*/
+
+.main{
+    position: absolute;
+    left:300px;
+    width:calc(100% - 300px);
+    min-height: 100vh;
+    transition: all 0.5s ease;
+}
+.main.active{
+    width:calc(100% - 60px);
+    left:60px;
+}
+.topbar{
+    width:100%;
+    height: 60px;
+    background-color: var(--topbar-color);
+    display: flex;
+    justify-content: space-between;
+}
+.user img{
+    width:60px;
+    height: 60px;
+}
+.toggle{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    padding-top:10px;
+    
+}
+.toggle i{
+    color:var(--toggle-color);
+    font-size: 30px;
+    padding-left:20px;
+    
+}
+.serch{
+    position: relative;
+    width:400px;
+    padding-top:10px;
+}
+.serch input{
+    position: relative;
+    width:100%;
+    padding:12px;
+    border-radius: 40px;
+    outline: none;
+    border:1px solid rgba(0,0,0,0.2);
+    padding-left:40px;
+    transition: all 0.4s ease;
+}
+.serch input.active{
+    box-shadow: 1px 1px 1px 1px rgb(134, 196, 216);
+}
+.serch i{
+    position: absolute;
+    left:15px;
+    top:22px;
+}
+
+.user
+{
+    position: relative;
+    min-width: 50px;
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    margin-right: 20px;
+}
+.user img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*finish topbarrrrr*/
+
+/* start card-box */
+
+.card-box{
+    position: relative;
+     width:80%; 
+    padding :20px;
+    /* display: grid;
+    grid-template-columns: repeat(4,1fr); */
+    display: flex;
+    justify-content: space-between;
+    left:300px;
+     top:50px; 
+     transition: all 0.6s ease;
+}
+.card-box.active{
+    width:95%;
+    left:60px;
+}
+.card{
+    position:relative;
+    background-color: var(--white-color);
+    width:340px;
+    padding:20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.6s ease;
+    cursor: pointer;
+}
+.card:hover{
+    transform: scale(1.1);
+    background-color: var(--toggle-color);
+    color:var(--blue-color);
+    
+}
+
+.card .information .numbers{
+    font-size:30px;
+    font-weight: 600;
+}
+
+.card .information .cardName{
+   margin-top:5px;
+   color:#999;
+}
+
+.card .iconBox{
+    font-size:50px;
+    color:var(--blue-color);
+}
+
+/*finish cards*/
+
+/* start details */
+.details{
+    position: relative;
+    width:80%;
+    padding:20px;
+    display: flex;
+    justify-content: space-between;
+    top:30px;
+    left:300px;
+    transition: all 0.6s ease;
+}
+.details.active {
+   left:60px;
+   width:95%;
+}
+.recentOrders{
+    position: relative;
+    background-color: var(--white-color);
+    display: grid;
+    width:1000px;
+    min-height: 530px;
+    padding:20px;
+    transition: all 0.6s ease;
+
+}
+.details .recentOrders.active {
+    width: 1200px;
+}
+.cardHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.cardHeader h2{
+    font-weight: 600;
+}
+.cardHeader .btn{
+    position: relative;
+    padding:9px 14px;
+    background-color: var(--blue-color);
+    text-decoration: none;
+    color:var(--white-color);
+    border-radius: 6px;
+}
+.details .recentOrders table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    
+}
+.details .recentOrders table thead tr td{
+    font-weight: 900;
+    font-size:20px;    
+}
+.details .recentOrders table tbody tr td{
+        border-top: 1px solid rgba(0, 0, 0, 0.2);
+        padding:10px;
+}
+.details .recentOrders table tbody tr:hover{
+    transition: all 0.3s ease-out;
+    background-color: var(--blue-color);
+    color:var(--white-color);
+}
+.details .recentOrders table tbody tr .btn-green{
+    background-color: #3edb5d;
+    padding:4px;
+    border-radius: 4px;
+    color:var(--white-color);
+    text-decoration: none;
+}
+.details .recentOrders table tbody tr .btn-red {
+    background-color: #33e3da;
+    padding: 4px;
+    border-radius: 4px;
+    color:var(--white-color);
+    text-decoration: none;
+}
+
+.details .recentOrders table thead tr td:last-child{
+   text-align: right;
+}
+.details .recentOrders table tbody tr td:last-child{
+    text-align: right;
+}
+/*  customers   */
+.recentCustomers{
+    min-height:530px;
+    width:400px;
+    background-color: var(--white-color);
+    color:var(--toggle-color);
+    padding:20px;
+    transition: all 0.6s ease;
+}
+.cardHeader{
+    margin-bottom: 30px;
+}
+.recentCustomers table{
+    width:100%;
+}
+.recentCustomers table tbody img{
+    position: relative;
+    width:60px;
+    height: 60px;
+   border-radius: 50%;
+    object-fit: cover;
+}
+.recentCustomers table tbody tr span{
+color:#999;
+}
+.details .recentCustomers.active{
+    margin-left:20px;
+    width:500px;
+}
+.btnn{
+    position: relative;
+    left:350px;
+    top:50px;
+    z-index: 100;
+}
